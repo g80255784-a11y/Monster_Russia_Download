@@ -3,492 +3,96 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Монстр Раша - Официальный сайт игры</title>
+    <title>MONSTER RUSSIA</title>
     <style>
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
-            font-family: 'Segoe UI', Arial, sans-serif;
+            font-family: Arial, sans-serif;
         }
-
+        
         body {
-            background: linear-gradient(135deg, #0c2461 0%, #1e3799 50%, #4a69bd 100%);
+            background: linear-gradient(135deg, #1a1a2e, #16213e);
             color: white;
-            overflow-x: hidden;
-        }
-
-        .container {
-            max-width: 1400px;
-            margin: 0 auto;
-            padding: 0 20px;
-        }
-
-        /* Header */
-        .header {
-            background: rgba(0, 0, 0, 0.8);
-            padding: 30px 0;
-            position: fixed;
-            width: 100%;
-            top: 0;
-            z-index: 1000;
-            backdrop-filter: blur(10px);
-        }
-
-        .header-content {
+            min-height: 100vh;
             display: flex;
+            flex-direction: column;
             align-items: center;
             justify-content: center;
-            gap: 30px;
+            text-align: center;
+            padding: 20px;
         }
-
+        
         .logo {
-            height: 80px;
-            width: auto;
+            width: 150px;
+            height: 150px;
+            margin-bottom: 20px;
         }
-
+        
         .game-title {
-            font-size: 3.5rem;
-            font-weight: 900;
-            color: #ff6b6b;
-            text-transform: uppercase;
-            letter-spacing: 4px;
-            text-shadow: 3px 3px 0 #000;
-        }
-
-        /* Hero Section */
-        .hero {
-            height: 100vh;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            text-align: center;
-            position: relative;
-            margin-top: 140px;
-        }
-
-        .hero-content h1 {
-            font-size: 5rem;
-            margin-bottom: 20px;
-            text-shadow: 4px 4px 0 #000;
-        }
-
-        .hero-content p {
-            font-size: 1.8rem;
-            margin-bottom: 40px;
-            color: #4ecdc4;
-        }
-
-        /* Sections */
-        .section {
-            padding: 100px 0;
-            border-bottom: 3px solid rgba(255, 255, 255, 0.1);
-        }
-
-        .section-title {
-            font-size: 3.5rem;
-            text-align: center;
-            margin-bottom: 60px;
-            color: #ff6b6b;
-            text-transform: uppercase;
-        }
-
-        /* About Section */
-        .about-content {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 60px;
-            align-items: center;
-        }
-
-        .about-text {
-            font-size: 1.3rem;
-            line-height: 1.8;
-        }
-
-        .game-screenshot {
-            width: 100%;
-            border-radius: 20px;
-            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.5);
-        }
-
-        /* Features Section */
-        .features-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-            gap: 40px;
-        }
-
-        .feature-card {
-            background: rgba(255, 255, 255, 0.1);
-            padding: 40px;
-            border-radius: 20px;
-            text-align: center;
-            border: 2px solid rgba(255, 255, 255, 0.2);
-            transition: transform 0.3s ease;
-        }
-
-        .feature-card:hover {
-            transform: translateY(-10px);
-        }
-
-        .feature-card h3 {
-            font-size: 1.8rem;
-            margin-bottom: 20px;
-            color: #4ecdc4;
-        }
-
-        /* Cars Section */
-        .cars-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 40px;
-        }
-
-        .car-card {
-            background: rgba(255, 255, 255, 0.1);
-            padding: 30px;
-            border-radius: 15px;
-            text-align: center;
-        }
-
-        .car-card h3 {
-            font-size: 1.5rem;
-            margin-bottom: 15px;
-            color: #ff6b6b;
-        }
-
-        /* Tracks Section */
-        .tracks-content {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 60px;
-            align-items: center;
-        }
-
-        .track-list {
-            list-style: none;
-            font-size: 1.2rem;
-        }
-
-        .track-list li {
-            padding: 15px 0;
-            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-        }
-
-        /* Download Section */
-        .download-section {
-            text-align: center;
-            background: linear-gradient(135deg, #ff6b6b 0%, #ff8e8e 100%);
-            padding: 100px 0;
-        }
-
-        .download-title {
-            font-size: 4rem;
-            margin-bottom: 30px;
-            text-shadow: 3px 3px 0 #000;
-        }
-
-        .download-button {
-            display: inline-block;
-            background: #4ecdc4;
-            color: white;
-            padding: 25px 80px;
-            font-size: 2rem;
+            font-size: 3rem;
             font-weight: bold;
+            color: #ff6b6b;
+            margin-bottom: 10px;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+        }
+        
+        .game-info {
+            max-width: 500px;
+            margin-bottom: 30px;
+            line-height: 1.5;
+            color: #ccc;
+        }
+        
+        .download-btn {
+            background: linear-gradient(45deg, #4CAF50, #45a049);
+            color: white;
+            padding: 15px 40px;
+            font-size: 1.2rem;
             text-decoration: none;
-            border-radius: 50px;
-            margin: 30px 0;
-            transition: all 0.3s ease;
-            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.3);
-            text-transform: uppercase;
-        }
-
-        .download-button:hover {
-            transform: scale(1.05);
-            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
-        }
-
-        /* Requirements Section */
-        .requirements-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 40px;
-        }
-
-        .requirement-card {
-            background: rgba(255, 255, 255, 0.1);
-            padding: 30px;
-            border-radius: 15px;
-        }
-
-        .requirement-card h3 {
-            color: #4ecdc4;
-            margin-bottom: 20px;
-            font-size: 1.5rem;
-        }
-
-        /* Gallery Section */
-        .gallery-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 20px;
-        }
-
-        .gallery-item {
-            border-radius: 15px;
-            overflow: hidden;
-            height: 250px;
-        }
-
-        .gallery-item img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
+            border-radius: 25px;
+            border: none;
+            cursor: pointer;
             transition: transform 0.3s ease;
+            box-shadow: 0 4px 15px rgba(76, 175, 80, 0.3);
         }
-
-        .gallery-item:hover img {
-            transform: scale(1.1);
+        
+        .download-btn:hover {
+            transform: scale(1.05);
         }
-
-        /* Footer */
-        .footer {
-            background: rgba(0, 0, 0, 0.9);
-            padding: 60px 0;
-            text-align: center;
-        }
-
-        /* Responsive */
-        @media (max-width: 768px) {
-            .header-content {
-                flex-direction: column;
-                gap: 15px;
-            }
-
-            .game-title {
-                font-size: 2.5rem;
-            }
-
-            .hero-content h1 {
-                font-size: 3rem;
-            }
-
-            .about-content,
-            .tracks-content {
-                grid-template-columns: 1fr;
-            }
-
-            .section-title {
-                font-size: 2.5rem;
-            }
-
-            .download-title {
-                font-size: 2.5rem;
-            }
-
-            .download-button {
-                padding: 20px 40px;
-                font-size: 1.5rem;
-            }
+        
+        .download-btn:active {
+            transform: scale(0.95);
         }
     </style>
 </head>
 <body>
-    <!-- Header -->
-    <header class="header">
-        <div class="container">
-            <div class="header-content">
-                <img src="Logo.png" alt="Monster Rush Logo" class="logo" onerror="this.style.display='none'">
-                <h1 class="game-title">Монстр Раша</h1>
-            </div>
-        </div>
-    </header>
-
-    <!-- Hero Section -->
-    <section class="hero">
-        <div class="container">
-            <div class="hero-content">
-                <h1>МОНСТР РАША</h1>
-                <p>Эпические гонки на монстр-траках</p>
-                <a href="#download" class="download-button">Играть сейчас</a>
-            </div>
-        </div>
-    </section>
-
-    <!-- About Section -->
-    <section class="section" id="about">
-        <div class="container">
-            <h2 class="section-title">О игре</h2>
-            <div class="about-content">
-                <div class="about-text">
-                    <p>Monster Rush - это революция в мире мобильных гоночных игр. Почувствуйте мощь настоящих монстр-траков, преодолевайте экстремальные препятствия и докажите, что вы - лучший гонщик.</p>
-                    <p>Совершенно новая физика движения, реалистичная динамика транспортных средств и захватывающие дух трассы ждут вас в этом уникальном гоночном симуляторе.</p>
-                    <p>Приготовьтесь к адреналину, скорости и невероятным приключениям на колесах!</p>
-                </div>
-                <img src="pro.png" alt="Game Screenshot" class="game-screenshot" onerror="this.style.display='none'">
-            </div>
-        </div>
-    </section>
-
-    <!-- Features Section -->
-    <section class="section" id="features">
-        <div class="container">
-            <h2 class="section-title">Особенности</h2>
-            <div class="features-grid">
-                <div class="feature-card">
-                    <h3>Реалистичная физика</h3>
-                    <p>Продвинутая система физики обеспечивает реалистичное поведение транспортных средств на различных поверхностях</p>
-                </div>
-                <div class="feature-card">
-                    <h3>Разнообразные трассы</h3>
-                    <p>Более 15 уникальных трасс с различными условиями и препятствиями</p>
-                </div>
-                <div class="feature-card">
-                    <h3>Мультиплеер</h3>
-                    <p>Соревнуйтесь с игроками со всего мира в реальном времени</p>
-                </div>
-                <div class="feature-card">
-                    <h3>Кастомизация</h3>
-                    <p>Глубокая система тюнинга и настройки вашего монстр-трака</p>
-                </div>
-                <div class="feature-card">
-                    <h3>Водные преграды</h3>
-                    <p>Уникальные водные участки трасс с реалистичной физикой жидкости</p>
-                </div>
-                <div class="feature-card">
-                    <h3>Достижения</h3>
-                    <p>Система достижений и наград за выполнение различных задач</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Cars Section -->
-    <section class="section" id="cars">
-        <div class="container">
-            <h2 class="section-title">Монстр-траки</h2>
-            <div class="cars-grid">
-                <div class="car-card">
-                    <h3>Горный Король</h3>
-                    <p>Мощный внедорожник для преодоления самых сложных горных трасс</p>
-                </div>
-                <div class="car-card">
-                    <h3>Водный Змей</h3>
-                    <p>Специальная модель для гонок по водным участкам</p>
-                </div>
-                <div class="car-card">
-                    <h3>Пустынный Шторм</h3>
-                    <p>Быстрый и маневренный для песчаных трасс</p>
-                </div>
-                <div class="car-card">
-                    <h3>Лесной Хищник</h3>
-                    <p>Универсальный монстр-трак для лесных гонок</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Tracks Section -->
-    <section class="section" id="tracks">
-        <div class="container">
-            <h2 class="section-title">Трассы</h2>
-            <div class="tracks-content">
-                <div>
-                    <ul class="track-list">
-                        <li>Горный серпантин</li>
-                        <li>Пустынный марафон</li>
-                        <li>Лесное сафари</li>
-                        <li>Водный лабиринт</li>
-                        <li>Городские джунгли</li>
-                        <li>Полярная экспедиция</li>
-                        <li>Тропический рай</li>
-                        <li>Индустриальная зона</li>
-                    </ul>
-                </div>
-                <img src="pro.png" alt="Track Preview" class="game-screenshot" onerror="this.style.display='none'">
-            </div>
-        </div>
-    </section>
-
-    <!-- Gallery Section -->
-    <section class="section" id="gallery">
-        <div class="container">
-            <h2 class="section-title">Галерея</h2>
-            <div class="gallery-grid">
-                <div class="gallery-item">
-                    <img src="pro.png" alt="Screenshot 1" onerror="this.style.display='none'">
-                </div>
-                <div class="gallery-item">
-                    <img src="pro.png" alt="Screenshot 2" onerror="this.style.display='none'">
-                </div>
-                <div class="gallery-item">
-                    <img src="pro.png" alt="Screenshot 3" onerror="this.style.display='none'">
-                </div>
-                <div class="gallery-item">
-                    <img src="pro.png" alt="Screenshot 4" onerror="this.style.display='none'">
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Requirements Section -->
-    <section class="section" id="requirements">
-        <div class="container">
-            <h2 class="section-title">Системные требования</h2>
-            <div class="requirements-grid">
-                <div class="requirement-card">
-                    <h3>Минимальные</h3>
-                    <p>Android 6.0+</p>
-                    <p>2 ГБ оперативной памяти</p>
-                    <p>Quad-core процессор</p>
-                    <p>100 МБ свободного места</p>
-                </div>
-                <div class="requirement-card">
-                    <h3>Рекомендуемые</h3>
-                    <p>Android 9.0+</p>
-                    <p>4 ГБ оперативной памяти</p>
-                    <p>Octa-core процессор</p>
-                    <p>200 МБ свободного места</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Download Section -->
-    <section class="download-section" id="download">
-        <div class="container">
-            <h2 class="download-title">Скачать сейчас</h2>
-            <p>Присоединяйтесь к экстремальным гонкам прямо сейчас!</p>
-            <a href="#" class="download-button" onclick="downloadGame()">
-                Скачать Бета-версию
-            </a>
-            <p>Бесплатно • Без вирусов • Проверено</p>
-        </div>
-    </section>
-
-    <!-- Footer -->
-    <footer class="footer">
-        <div class="container">
-            <p>Monster Rush © 2024. Все права защищены.</p>
-            <p>Официальный сайт игры</p>
-        </div>
-    </footer>
+    <img src="1761483319873.png" alt="MONSTER RUSSIA" class="logo" onerror="this.style.display='none'">
+    
+    <h1 class="game-title">MONSTER RUSSIA</h1>
+    
+    <div class="game-info">
+        Приключенческая игра с монстрами и загадочными локациями России. Исследуй, открывай тайны и встречай уникальных существ.
+    </div>
+    
+    <button class="download-btn" onclick="downloadGame()">
+        Скачать игру
+    </button>
 
     <script>
         function downloadGame() {
-            alert('Начинается загрузка Monster Rush Beta APK...\n\nРазрешите установку из неизвестных источников в настройках безопасности.');
+            // Создаем скрытую ссылку для скачивания
+            const link = document.createElement('a');
+            link.href = 'launcher.apk';
+            link.download = 'monster_russia.apk';
+            document.body.appendChild(link);
+            link.click();
+            document.body.removeChild(link);
+            
+            // Сообщение для пользователя
+            alert('Начинается скачивание MONSTER RUSSIA...\n\nФайл: launcher.apk\n\nПосле скачивания разрешите установку из неизвестных источников.');
         }
-
-        // Smooth scroll for navigation links
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function (e) {
-                e.preventDefault();
-                document.querySelector(this.getAttribute('href')).scrollIntoView({
-                    behavior: 'smooth'
-                });
-            });
-        });
     </script>
 </body>
 </html>
