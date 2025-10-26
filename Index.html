@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CRMP Монстр Раша - Установка</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Arial', sans-serif;
+            background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
+            min-height: 100vh;
+            color: white;
+            position: relative;
+            overflow-x: hidden;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 40px 20px;
+            position: relative;
+            z-index: 1;
+        }
+
+        .header {
+            text-align: center;
+            margin-bottom: 60px;
+        }
+
+        .game-title {
+            font-size: 4rem;
+            font-weight: bold;
+            color: #ff6b6b;
+            text-shadow: 0 0 20px #ff6b6b,
+                         0 0 40px #ff6b6b;
+            margin-bottom: 20px;
+            animation: glow 2s ease-in-out infinite;
+        }
+
+        .crmp-badge {
+            display: inline-block;
+            background: linear-gradient(45deg, #ff6b6b, #ff8e8e);
+            color: white;
+            padding: 8px 20px;
+            border-radius: 25px;
+            font-weight: bold;
+            font-size: 1.1rem;
+            margin-bottom: 20px;
+        }
+
+        .content {
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 20px;
+            padding: 40px;
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            margin-bottom: 40px;
+        }
+
+        .info-section {
+            margin-bottom: 30px;
+        }
+
+        .section-title {
+            font-size: 2rem;
+            color: #4ecdc4;
+            margin-bottom: 20px;
+            text-align: center;
+        }
+
+        .features {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+            margin-bottom: 40px;
+        }
+
+        .feature {
+            background: rgba(255, 255, 255, 0.05);
+            padding: 20px;
+            border-radius: 10px;
+            border-left: 4px solid #4ecdc4;
+        }
+
+        .feature-title {
+            color: #4ecdc4;
+            margin-bottom: 10px;
+            font-size: 1.2rem;
+        }
+
+        .download-section {
+            text-align: center;
+            padding: 40px;
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 15px;
+            border: 2px solid #4ecdc4;
+        }
+
+        .download-button {
+            display: inline-block;
+            background: linear-gradient(45deg, #4CAF50, #45a049);
+            color: white;
+            padding: 20px 60px;
+            font-size: 1.5rem;
+            font-weight: bold;
+            text-decoration: none;
+            border-radius: 50px;
+            transition: all 0.3s ease;
+            box-shadow: 0 0 20px rgba(76, 175, 80, 0.5);
+        }
+
+        .download-button:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 0 30px rgba(76, 175, 80, 0.8);
+        }
+
+        .system-requirements {
+            background: rgba(255, 255, 255, 0.05);
+            padding: 30px;
+            border-radius: 15px;
+            margin-top: 40px;
+        }
+
+        .requirements-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+            margin-top: 20px;
+        }
+
+        .requirement-item {
+            padding: 15px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 8px;
+        }
+
+        .footer {
+            text-align: center;
+            color: rgba(255, 255, 255, 0.6);
+            margin-top: 40px;
+            padding: 20px;
+        }
+
+        @keyframes glow {
+            0%, 100% { text-shadow: 0 0 20px #ff6b6b, 0 0 40px #ff6b6b; }
+            50% { text-shadow: 0 0 30px #ff6b6b, 0 0 60px #ff6b6b; }
+        }
+
+        @media (max-width: 768px) {
+            .game-title {
+                font-size: 2.5rem;
+            }
+            
+            .content {
+                padding: 20px;
+            }
+            
+            .download-button {
+                padding: 15px 40px;
+                font-size: 1.2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header class="header">
+            <div class="crmp-badge">CRMP УСТАНОВКА</div>
+            <h1 class="game-title">МОНСТР РАША</h1>
+            <p>Многопользовательская гоночная игра на CRMP</p>
+        </header>
+
+        <main class="content">
+            <div class="info-section">
+                <h2 class="section-title">🚀 Установка CRMP Монстр Раша</h2>
+                <p style="text-align: center; font-size: 1.2rem; margin-bottom: 30px;">
+                    Присоединяйся к безумным гонкам на монстр-траках! Установи бета-версию прямо сейчас.
+                </p>
+            </div>
+
+            <div class="features">
+                <div class="feature">
+                    <h3 class="feature-title">🎮 Геймплей</h3>
+                    <p>Безумные гонки на мощных монстр-траках по экстремальным трассам</p>
+                </div>
+                <div class="feature">
+                    <h3 class="feature-title">🌊 Водные треки</h3>
+                    <p>Уникальные трассы с водными препятствиями и брызгами</p>
+                </div>
+                <div class="feature">
+                    <h3 class="feature-title">👥 Мультиплеер</h3>
+                    <p>Играй с друзьями на CRMP сервере</p>
+                </div>
+            </div>
+
+            <div class="download-section">
+                <h2 class="section-title">📥 Скачать Beta версию</h2>
+                <p style="margin-bottom: 30px; font-size: 1.1rem;">
+                    Попробуй бета-версию игры первым! Установщик включает клиент CRMP и все необходимые файлы.
+                </p>
+                <a href="#" class="download-button" onclick="downloadGame()">
+                    ⬇️ СКАЧАТЬ БЕТУ
+                </a>
+                <p style="margin-top: 20px; font-size: 0.9rem; color: #ccc;">
+                    Размер: ~2.3 GB • Версия: 0.1.5 Beta
+                </p>
+            </div>
+
+            <div class="system-requirements">
+                <h2 class="section-title">💻 Системные требования</h2>
+                <div class="requirements-grid">
+                    <div class="requirement-item">
+                        <strong>Минимальные:</strong><br>
+                        OS: Windows 7+<br>
+                        CPU: Intel i3<br>
+                        RAM: 4GB<br>
+                        GPU: GTX 650
+                    </div>
+                    <div class="requirement-item">
+                        <strong>Рекомендуемые:</strong><br>
+                        OS: Windows 10+<br>
+                        CPU: Intel i5<br>
+                        RAM: 8GB<br>
+                        GPU: GTX 1050
+                    </div>
+                </div>
+            </div>
+        </main>
+
+        <footer class="footer">
+            <p>Monster Rush CRMP © 2024 • Beta Version • Все права защищены</p>
+        </footer>
+    </div>
+
+    <script>
+        function downloadGame() {
+            alert('Начинается загрузка установщика Monster Rush CRMP Beta...\n\nПожалуйста, дождитесь завершения загрузки.');
+            // Здесь будет реальная ссылка на скачивание
+            // window.location.href = 'download/monster-rush-beta.exe';
+        }
+    </script>
+</body>
+</html>
